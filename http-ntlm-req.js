@@ -51,9 +51,9 @@ if(debug){
 							case '5':
 								connData = {
 									url: realURL, 
-									username: node.authconf.user, 
-									password: node.authconf.pass, 
-									domain: node.authconf.doman, 
+									username: msg.user || node.authconf.user, 
+									password: msg.pass || node.authconf.pass, 
+									domain: msg.domain || node.authconf.doman, 
 									workstation: ''}; 
 							break;
 							default: 
@@ -93,9 +93,9 @@ if(debug){
 							case '5':
 								connData = {
 										url: postURL, 
-										username: node.authconf.user, 
-										password: node.authconf.pass, 
-										domain: node.authconf.doman, 
+										username: msg.user || node.authconf.user, 
+									password: msg.pass || node.authconf.pass, 
+									domain: msg.domain || node.authconf.doman, 
 										workstation: '',
 										body: xml,
 										headers: defaultHeader //{ 'Content-Type': 'text/xml' }							
